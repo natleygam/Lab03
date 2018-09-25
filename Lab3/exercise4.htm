@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: white;}
+h1   {color: darkblue;}
+p    {color: blue;
+      border-style: solid;}
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+}
+
+/* mouse over link */
+a:hover {
+    color: violet;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+</style>
+</head>
+<body>
+
+<h1>My Profile ;)</h1>
+<div id="myPar">
+  <p> The values of the colors must go between 000 to 255 </p>
+</div>
+<form id="form1" action="/action_page.php">
+Border:<br><br>
+Red value: <input type="number" name="redborder"><br>
+Green value: <input type="number" name="grborder"><br>
+Blue value: <input type="number" name="bluborder"><br>
+Width: <input type="number" name="width"><br><br>
+
+Backround Color:<br><br>
+Red value: <input type="Number" name="redback"><br>
+Green value: <input type="number" name="greback"><br>
+Blue value: <input type="number" name="blueback"><br>
+
+<input type="button" onclick="Change()" value="Submit">
+</form>
+<script>
+
+function Change() {
+
+var formelement = document.getElementById("form1");
+var redborder = formelement.elements[0].value;
+var greenborder = formelement.elements[1].value;
+var blueborder = formelement.elements[2].value;
+var width = formelement.elements[3].value;
+var redbcolor = formelement.elements[4].value;
+var greenbcolor = formelement.elements[5].value;
+var bluebcolor = formelement.elements[6].value;
+	//alert(border);
+  if(redbcolor > 255|| redborder> 255 || bluebcolor> 255||blueborder> 255||greenborder> 255||greenbcolor> 255 || redbcolor < 000|| redborder < 000|| bluebcolor< 000||blueborder< 000||greenborder< 000||greenbcolor< 000)
+{
+  alert("Number of one or more of the input values is outside the limited range (from 000 to 255)");
+}
+  else{
+  var someTag = document.getElementById("myPar");
+//Change the style attribute
+  alert(width);
+  var backcolor = rgb(redbcolor,greenbcolor,bluebcolor);
+  var bordercolor = rgb(redborder,greenborder,blueborder);
+  someTag.style.backgroundColor = backcolor;
+  someTag.body.style.border = bordercolor;
+  someTag.body.width.border = width;
+}
+function rgb(r, g, b){
+  return ["rgb(",r,",",g,",",b,")"].join("");
+}
+
+
+}
+
+</script>
+</body>
+</html>

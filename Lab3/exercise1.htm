@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Password Validator</h1>
+
+<p>Enter a password two times in order to validate it</p>
+<form id="form1" action="/action_page.php">
+Password: <input type="text" name="pword"><br>
+Repeat Password: <input type="text" name="rpword"><br><br>
+<input type="button" onclick="Checker()" value="Validate">
+</form>
+
+<script>
+
+function Checker() {
+
+	var formelement = document.getElementById("form1");
+	var password = formelement.elements[0].value;
+	var rpassword = formelement.elements[1].value;
+	//alert(rpassword);
+	if(password == rpassword && password.length>=8)
+	{
+		alert("Cool!");
+		 //document.getElementById("demo").innerHTML = password;
+	}
+	else if (password != rpassword)
+	{
+		alert("Passwords dont match!");
+		 //document.getElementById("demo").innerHTML = text;
+	}
+	if(password.length<8){
+
+		alert("Pasword too short! Must be at least 8 characters!")
+
+	}
+}
+</script>
+
+
+
+</body>
+</html>

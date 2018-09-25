@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Slides Show</title>
+	</head>
+<body>
+	<h1>Slideshow</h1>
+	  <input type="button" onclick="Prev()" value="Previous" />
+    <img src="ok.jpg" id="myImage" width="500" height="300">
+    <input type="button" onclick="changeImage()" value="Next" />
+    <script>
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("ok.jpg")) {
+                image.src = "pic.jpg";
+            }
+            else if(image.src.match("pic.jpg")){
+                image.src = "nat.jpg";
+            }
+            else if(image.src.match("nat.jpg")){
+                image.src = "animal.jpg";
+            }
+            else if(image.src.match("animal.jpg")){
+                image.src = "pic1.jpg";
+            }
+            else{
+              image.src = "ok.jpg";
+            }
+        }
+				function Prev()
+				{
+					var image = document.getElementById('myImage');
+					if (image.src.match("ok.jpg")) {
+							image.src = "pic1.jpg";
+					}
+					else if(image.src.match("pic1.jpg")){
+							image.src = "animal.jpg";
+					}
+					else if(image.src.match("animal.jpg")){
+							image.src = "nat.jpg";
+					}
+					else if(image.src.match("nat.jpg")){
+							image.src = "pic.jpg";
+					}
+					else{
+						image.src = "ok.jpg";
+					}
+				}
+    </script>
+</body>
+</html>
